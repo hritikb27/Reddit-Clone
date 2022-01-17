@@ -2,14 +2,19 @@ body {
 	width: 100vw;
 	background-color: #dbe0e4;
 	margin: 0;
+
+	a{
+		text-decoration: none;
+	}
 }
 
-body:not(nav){
-    overflow-y: scroll;
-    overflow-x: hidden;
+body:not(.nav) {
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 nav {
+	position: fixed;
 	background-color: white;
 	display: flex;
 	justify-content: space-between;
@@ -41,7 +46,10 @@ nav {
 			display: flex;
 			gap: 10px;
 
-			button {
+			li {
+				display: flex;
+				align-items: center;
+				cursor: pointer;
 				min-width: 32px;
 				min-height: 32px;
 				font-size: 14px;
@@ -72,8 +80,14 @@ nav {
 }
 
 .posts {
-    cursor: pointer;
+	box-sizing: border-box;
+	border: 1px solid lightgray;
+	cursor: pointer;
 	background-color: white;
+	border-radius: 4px;
+	min-height: 22vh;
+	margin: 20px 0;
+	min-width: 640px;
 
 	.sub-name {
 		font-weight: bold;
@@ -84,8 +98,35 @@ nav {
 	}
 }
 
+.posts:hover {
+	border: 1px solid #0079d3;
+}
+
 .post-desc {
-    max-height: 12vh;
-    mask-image: linear-gradient(180deg, #000 60%, transparent);
-    overflow: hidden;
+	max-height: 12vh;
+	mask-image: linear-gradient(180deg, #000 60%, transparent);
+	overflow: hidden;
+}
+
+form {
+	padding-top: 5rem;
+}
+
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+@media (min-width: 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
+
+.form-signin{
+	display: flex;
+	justify-content: center;
 }
